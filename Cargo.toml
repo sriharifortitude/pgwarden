@@ -1,0 +1,17 @@
+[package]
+name = "pgwarden"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.77"
+description = "A security linter for PostgreSQL schemas: SECURITY DEFINER functions, row-level security gaps, PUBLIC grants and risky roles, read from pg_dump output or migrations."
+license = "MIT"
+repository = "https://github.com/sriharifortitude/pgwarden"
+readme = "README.md"
+keywords = ["postgresql", "security", "row-level-security", "linter", "sql"]
+categories = ["command-line-utilities", "development-tools", "database"]
+
+[dependencies]
+serde_json = "1"
+
+[profile.release]
+strip = true
