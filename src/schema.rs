@@ -523,7 +523,7 @@ impl Schema {
                             .rest()
                             .iter()
                             .filter(|t| !matches!(t.tok, Tok::Punct(_)))
-                            .last()
+                            .next_back()
                             .map(|t| &t.tok)
                         {
                             if let Some(mut table) = self.tables.remove(&name) {
