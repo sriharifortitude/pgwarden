@@ -522,8 +522,7 @@ impl Schema {
                         if let Some(Tok::Word(new) | Tok::Ident(new)) = c
                             .rest()
                             .iter()
-                            .filter(|t| !matches!(t.tok, Tok::Punct(_)))
-                            .next_back()
+                            .rfind(|t| !matches!(t.tok, Tok::Punct(_)))
                             .map(|t| &t.tok)
                         {
                             if let Some(mut table) = self.tables.remove(&name) {
